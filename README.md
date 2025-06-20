@@ -4,10 +4,6 @@ A full-stack web application for semantic search and question-answering over BIM
 
 It allows users to upload and query architectural or engineering documentation using natural language. The system processes documents through OCR, parsing, and cleaning, generates vector embeddings, and delivers relevant answers in real-time using an AI model.
 
-## Repositories
-
-- Frontend: [src/components](https://github.com/DOSETIMPEX-UVT/Frontend.git)
-- Backend: [[link-to-backend-repo]](https://github.com/DOSETIMPEX-UVT/Backend.git)
 
 ---
 
