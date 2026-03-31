@@ -6,16 +6,13 @@ from pathlib import Path
 import os
 import requests
 
-# Încarcă .env
 env_path = Path(__file__).parent / '.env'
 load_dotenv(dotenv_path=env_path)
 
-# Variabilele de autentificare
 AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
 API_AUDIENCE = os.getenv("API_AUDIENCE")
 ALGORITHMS = os.getenv("ALGORITHMS", "RS256")
 
-# Sistem de extragere a tokenului din request
 token_auth_scheme = HTTPBearer()
 
 
@@ -24,11 +21,9 @@ def verify_jwt(token: str):
         print("Token primit:", token)
         print("Audience setat în server:", API_AUDIENCE)
         print("Issuer setat în server:", f"https://{AUTH0_DOMAIN}/")
-        # Luăm cheia publică de la Auth0
         jwks_url = f"https://{AUTH0_DOMAIN}/.well-known/jwks.json"
         jwks = requests.get(jwks_url).json()
 
-        # Citim header-ul JWT-ului să aflăm "kid"
         unverified_header = jwt.get_unverified_header(token)
 
         rsa_key = {}
@@ -43,7 +38,6 @@ def verify_jwt(token: str):
                 }
 
         if rsa_key:
-            # Decodăm și verificăm tokenul
             payload = jwt.decode(
                 token,
                 rsa_key,
@@ -70,12 +64,10 @@ def verify_jwt(token: str):
     )
 
 
-# Dependency FastAPI pentru rutele protejate
 def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(token_auth_scheme)):
     token = credentials.credentials
     return verify_jwt(
-        token)  # returneaza dictionar cu mai multe chei care contin informatii din auth0, precum id il gasim in cheia sub
-
+        token)
 
 def get_management_token():
     url = f"https://{AUTH0_DOMAIN}/oauth/token"

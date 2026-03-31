@@ -10,7 +10,7 @@ CREATE TABLE users (
     gender VARCHAR(50),
     language VARCHAR(50),
     country VARCHAR(50),
-    company VARCHAR(255) DEFAULT 'DOSETIMPEX',
+    company VARCHAR(255) DEFAULT 'BIM',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

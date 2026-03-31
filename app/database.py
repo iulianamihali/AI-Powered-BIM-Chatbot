@@ -1,5 +1,5 @@
-from sqlalchemy import create_engine #creaza o conexiune intre app(app) si baza de date PostgreSQL
-from sqlalchemy.orm import sessionmaker, declarative_base  #permite crearea de sesiuni de lucru cu baza (operatii de adaugare, modificare etc)
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, declarative_base
 import os
 from dotenv import load_dotenv
 
@@ -16,6 +16,6 @@ Base = declarative_base()
 def get_db():
     db = SessionLocal()
     try:
-        yield db  # oferă sesiunea către route
+        yield db
     finally:
-        db.close()  # când ruta se termină, închide conexiunea
+        db.close()
