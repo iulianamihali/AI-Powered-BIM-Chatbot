@@ -5,7 +5,6 @@ import os
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 input_folder = "Data/CleanedData"
 output_folder = "Data/VectorizedDataNormalized"
-
 os.makedirs(output_folder, exist_ok=True)
 
 for filename in os.listdir(input_folder):

@@ -1,6 +1,5 @@
 from pypdf import PdfReader
-import os 
-
+import os
 def readingPdf(path):
     reader = PdfReader(path)
     full_text = ""

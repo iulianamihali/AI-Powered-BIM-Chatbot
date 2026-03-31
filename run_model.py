@@ -5,7 +5,6 @@ import torch
 
 base_model_path = "unsloth/mistral-7b-instruct-v0.3-bnb-4bit"
 adapter_path = "./mistral-dosetimpex"
-
 model = AutoModelForCausalLM.from_pretrained(base_model_path)
 
 tokenizer = AutoTokenizer.from_pretrained(base_model_path)

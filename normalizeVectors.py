@@ -6,7 +6,6 @@ folder_path = 'Data/VectorizedData'
 folder_salvare = 'Data/VectorizedDataNormalized'
 
 os.makedirs(folder_salvare, exist_ok=True)
-
 for filename in os.listdir(folder_path):
     file_path = os.path.join(folder_path, filename)
 

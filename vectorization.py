@@ -3,7 +3,6 @@ import numpy as np
 import os
 
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
-
 folder_path = os.path.join(os.getcwd(), 'Data', 'CleanedData')
 output_folder = os.path.join(os.getcwd(), 'Data', 'VectorizedData')
 os.makedirs(output_folder, exist_ok=True)

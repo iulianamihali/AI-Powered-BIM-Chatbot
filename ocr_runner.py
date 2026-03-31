@@ -9,7 +9,6 @@ def ocr_pdf(input_path, output_path):
             output_type="pdfa",
         )
         readingPdf(output_path)
-    
     except Exception as e:
         print(f"[Eroare la procesarea OCR pentru {input_path}]: {e}")
    

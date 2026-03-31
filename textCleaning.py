@@ -4,8 +4,6 @@ import re
 input_folder = r"Data\ProcessedData"
 output_folder = r"Data\CleanedData"
 os.makedirs(output_folder, exist_ok=True)
-
-
 def curata_text(text):
     text = text.replace('\x0c', ' ')  # caractere de pagină
     text = re.sub(r'\n+', '\n', text)  # elimină linii goale duble

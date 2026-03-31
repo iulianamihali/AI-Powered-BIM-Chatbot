@@ -4,7 +4,6 @@ import os
 
 raw_folder = "Data/Raw"
 output_folder = "Data/ProcessedData"
-
 for filename in os.listdir("Data/Raw"):
     input_path =  os.path.join(raw_folder, filename)
     output_path =os.path.join(output_folder, f"ocr_{filename}")
