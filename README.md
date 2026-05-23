@@ -13,7 +13,7 @@ It allows users to upload and query architectural or engineering documentation u
 - OCR processing using Tesseract for image-based text extraction
 - Text cleaning with regex-based rules
 - Embeddings generated using Sentence Transformers
-- Similarity search powered by FAISS (Quadrant indexing)
+- Similarity search powered by FAISS (Qdrant indexing)
 - Real-time AI responses using the Mistral model
 
 ---
@@ -24,7 +24,7 @@ It allows users to upload and query architectural or engineering documentation u
 - Backend: FastAPI
 - Authentication: Auth0
 - Database: PostgreSQL
-- Vector Database: FAISS
+- Vector Database: Qdrant
 - NLP Tools: Sentence Transformers, Tesseract OCR
 - Integrations: Autodesk Forge, Revit API, BIM 360
 
